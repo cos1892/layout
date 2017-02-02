@@ -1,0 +1,521 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "mixins";
+@import "myBootstrap";
+
+$fontLato: 'Lato', sans-serif;
+$fontFjallaOne: 'Fjalla One', sans-serif;
+$fontOswald: 'Oswald', sans-serif;
+$colorHeader: #e7e7e7;
+$colorHeaderBackground: #202628;
+$colorHeaderHover: #e84c3d;
+$colorParagraph: #767c7e;
+$colorWhite: #fff;
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	font-family: $fontLato;
+	font-style: italic;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+	font-family: $fontLato;
+	font-style: italic;
+}
+
+a {
+	@include transition(color);
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+html {
+	height: 100%;
+	font-size: 10px;
+
+  body {
+	height: 100%;
+	font-family: $fontFjallaOne;
+
+  	 & .main-content {
+  	 	height: auto;
+  	 	min-height: 100%;
+		
+		& .header {
+			height: 80px;
+			background: $colorHeaderBackground;
+
+			& .header__menu {
+				font-size: 0;
+				height: 100%;
+
+				& a {
+					display: inline-block;
+					padding: 0 20px;
+					height: 100%;
+					color: $colorHeader;
+					font-size: 1.4rem;
+					line-height: 80px;
+					text-transform: uppercase;
+					@include transition(background);
+
+					&.active {
+						background: $colorHeaderHover;
+					}
+
+					&:hover {
+						@extend .active;
+					}
+				}
+			}
+		}
+
+  	 	& .main {
+  	 		padding: 80px 0 204px;
+
+  	 		& .promo-block {
+  	 			height: 560px;
+  	 			background: url('../img/layout.jpg');
+  	 			background-size: cover;
+
+  	 			& .container {
+  	 				position: relative;
+
+  	 				& .promo-block__arrow {
+	  	 				position: absolute;
+						top: 290px;
+						display: inline-block;
+						width: 35px;
+						height: 70px;
+						background: $colorHeaderHover;
+						cursor: pointer;
+						text-align: center;
+						line-height: 70px;
+						font-size: 2rem;
+						@include transition(background);
+
+						&:hover {
+		  	 				background: darken($colorHeaderHover, 10%);
+		  	 			}
+	  	 			}
+
+	  	 			& .left_arrow {
+		  	 			left: 0;
+		  	 			border-radius: 35px 0 0 35px;
+		  	 		}
+
+		  	 		& .right_arrow {
+		  	 			left: 36px;
+		  	 			border-radius: 0 35px 35px 0;
+		  	 		}
+
+		  	 		& .promo-block__text {
+		  	 			position: absolute;
+		  	 			top: 390px;
+
+		  	 			& p {
+		  	 				font-size: 3.1rem;
+							color: $colorHeader;
+							position: relative;
+
+							&:first-child:after {
+								content: "";
+								display: block;
+								width: 185px;
+								border: 1px solid $colorHeader;
+								position: absolute;
+								top: 50%;
+								left: 175px;;
+							}
+		  	 			}
+
+		  	 			& a {
+		  	 				font-size: 1.5rem;
+		  	 				color: $colorHeaderHover;
+
+		  	 				&:hover {
+		  	 					color: darken($colorHeaderHover, 10%);
+		  	 				}
+		  	 			}
+		  	 		}
+  	 			}
+  	 		}
+
+  	 		& .news-block {
+  	 			background: $colorHeader;
+				padding: 80px 0;
+
+				& .news-block__list {
+					list-style: none;
+					padding: 0;
+
+					& li {
+						overflow: hidden;
+						padding: 0;
+
+						& .ico {
+							@include ico($colorWhite, $colorHeaderHover);
+
+							&:hover {
+								background: darken($colorHeaderHover, 10%);
+							}
+						}
+
+						& .news-block__text {
+							padding-right: 0;
+
+							& h3 {
+								font-size: 2.1rem;
+								color: $colorHeaderBackground;
+								margin: 0 0 30px;
+							}
+
+							& p {
+								font-family: $fontLato;
+								font-size: 1.4rem;
+								line-height: 2.4rem;
+								color: $colorParagraph;
+							}
+
+							& a {
+								color: $colorHeaderHover;
+
+								&:hover {
+									color: darken($colorHeaderHover, 10%);
+								}
+							}
+						}
+					}
+				}
+  	 		}
+
+  	 		& .section-block {
+  	 			background: $colorWhite;
+  	 			margin: 80px 0;
+
+  	 			& h3 {
+  	 				margin: 0 0 30px;
+  	 				color: $colorHeaderBackground;
+  	 				font-size: 2.1rem;
+  	 				padding: 0;
+  	 			}
+
+  	 			& .preview {
+  	 				width: 354px;
+					height: 354px;
+  	 			}
+
+  	 			& .articles {
+  	 				padding: 0;
+	  	 			font-family: $fontLato;
+
+  	 				& h5 {
+	  	 				border-style: solid;
+						border-color: $colorHeader;
+						border-width: 1px 0;
+						font-size: 1.6rem;
+						color: $colorHeaderHover;
+						padding: 10px 0;
+						margin: 0 0 30px;
+	  	 			}
+
+	  	 			& article {
+	  	 				padding: 0 30px 0 0;
+
+	  	 				& h6 {
+	  	 					font-weight: bold;
+	  	 					margin: 0 0 15px 0;
+	  	 					color: $colorHeaderBackground;
+	  	 					font-size: 1.6rem;
+	  	 				}
+
+	  	 				& p {
+	  	 					font-size: 1.4rem;
+	  	 					line-height: 2.4rem;
+	  	 					color: $colorParagraph;
+	  	 				}
+
+	  	 				& .button-more {
+	  	 					font-family: $fontOswald;
+	  	 					font-size: 1.4rem;
+	  	 					@include border-radius(20px);
+	  	 					margin-top: 20px;
+	  	 				}
+	  	 			}
+  	 			}
+  	 		}
+
+  	 		& .subscribe {
+  	 			background-color: $colorWhite;
+  	 			margin-bottom: 30px;
+  	 			color: $colorWhite;
+
+  	 			& .row {
+  	 				background: $colorHeaderHover;
+  	 				padding: 45px 30px;
+  	 				@include border-radius(10px);
+					
+					& .quote {
+						padding: 0;
+
+						& .ico {
+							margin-right: 30px;
+							@include ico($colorWhite, $colorHeaderBackground);
+
+							&:hover {
+								background: darken($colorHeaderBackground, 10%);
+							}
+						}
+
+						& blockquote {
+							border: none;
+							padding: 0;
+							margin: 0;
+
+							& p {
+								font-size: 1.6rem;
+								font-family: $fontLato;
+							}
+							
+						}
+					}
+
+					& form {
+
+						& .input-email {
+							@include border-radius(20px);
+							padding: 15px 20px;
+							height: 43px;
+						}
+
+						& .submit {
+							background: $colorHeaderBackground;
+							font-size: 1.5rem;
+							height: 43px;
+							font-family: $fontFjallaOne;
+							@include border-radius(20px);
+							border: none;
+
+							&:hover {
+								background: darken($colorHeaderBackground, 10%);
+							}
+						}
+					}
+
+  	 				& h3 {
+  	 					font-size: 2.1rem;
+  	 					margin-top: 0;
+  	 				}
+  	 			}
+  	 		}
+
+  	 		& .information-block {
+  	 			background: $colorWhite;
+  	 			margin-bottom: 30px;
+				
+				& h3 {
+					font-size: 2.1rem;
+					color: $colorHeaderBackground;
+					margin: 0 0 30px;
+				}
+
+  	 			& .commentaries {
+
+  	 				& .comment {
+  	 					border-top: 1px solid $colorHeader;
+						padding: 30px 0;
+
+						& p {
+							color: $colorParagraph;
+							font-family: $fontLato;
+							font-size: 1.4rem;
+							line-height: 2.4rem;
+							margin: 0;
+						}
+
+						& a {
+							@extend p;
+							color: $colorHeaderHover;
+
+							&:hover {
+								color: darken($colorHeaderHover, 10%);
+							}
+						}
+
+  	 					& img {
+  	 						width: 70px;
+  	 						height: 70px;
+  	 						padding: 0;
+  	 					}
+
+  	 					&:last-child {
+  	 						border-bottom: 1px solid $colorHeader;
+  	 					}
+  	 				}
+  	 			}
+
+  	 			& .feedback form {
+  	 				background: $colorHeader;
+  	 				padding: 30px;
+  	 				@include border-radius(5px);
+
+  	 				& p {
+  	 					color: $colorParagraph;
+						font-family: $fontLato;
+						font-size: 1.4rem;
+						line-height: 2.4rem;
+						margin-bottom: 20px;
+  	 				}
+
+  	 				& input {
+  	 					@include border-radius(20px);
+  	 					margin-bottom: 20px;
+  	 					padding: 15px;
+  	 					height: 40px;
+  	 				}
+
+  	 				& textarea {
+  	 					@extend input;
+  	 					resize: none;
+  	 					height: auto;
+  	 				}
+
+  	 				& .feedback-submit {
+  	 					height: 40px;
+  	 					background: $colorHeaderHover;
+  	 					@include border-radius(20px);
+  	 					border: none;
+
+  	 					&:hover {
+  	 						background: darken($colorHeaderHover, 10%);
+  	 					}
+  	 				}
+  	 			}
+
+  	 			& .address {
+
+  	 				& article {
+  	 					border-top: 1px solid $colorHeader;
+						padding: 30px 0;
+						position: relative;
+						font-family: $fontLato;
+
+						&:last-child {
+							border-bottom: 1px solid $colorHeader;
+						}
+
+						& span {
+							font-size: 1.4rem;
+							color: $colorParagraph;
+						}
+
+						& .glyphicon {
+							font-size: 2.4rem;
+							color: $colorHeaderBackground;
+						}
+
+						& h5 {
+							font-size: 1.4rem;
+							color: $colorHeaderHover;
+							margin: 0 0 14px;
+						}
+
+						& a {
+							padding-left: 0;
+							@extend span;
+
+							&:hover {
+								color: darken($colorHeaderBackground, 10%);
+							}
+						}
+  	 				}
+  	 			}
+  	 		}
+  	 	}
+  	 }
+
+  	 & .footer {
+		background: $colorHeaderBackground;
+		height: 204px;
+		margin-top: -204px;
+
+		& .footer-information {
+
+			& .footer__menu {
+				padding-top: 80px;
+
+				& a {
+					color: $colorHeader;
+					margin-right: 40px;
+					font-family: $fontLato;
+					position: relative;
+					font-size: 1.4rem;
+
+					&:hover {
+						color: darken($colorHeader, 30%);
+					}
+
+					&:not(:first-child):after {
+						content: "/";
+						color: #4e5456;
+						position: absolute;
+						left: -23px;
+					}
+				}
+			}
+
+			& .copyright {
+				padding-top: 20px;
+
+				& a {
+					color: $colorParagraph;
+					margin-right: 10px;
+					position: relative;
+					font-family: $fontLato;
+					font-size: 1.4rem;
+
+					&:first-child {
+						color: $colorHeaderHover;
+					}
+
+					&:not(:first-child):after {
+						content: "/";
+						color: #767c7e;
+						position: absolute;
+						left: -7px;
+					}
+
+					&:nth-child(2):after {
+						color: #e84c3d;
+					}
+
+					&:hover {
+						color: $colorHeaderHover;
+					}
+				}
+			}
+		}
+
+		& .social-icons {
+			padding-top: 80px;
+
+			& a {
+				width: 45px;
+				height: 45px;
+				margin-left: 8px;
+				@include border-radius(50%);
+				background: $colorHeaderHover;
+				color: $colorHeader;
+				font-size: 2rem;
+				text-align: center;
+				line-height: 45px;
+				font-weight: bold;
+
+				&:hover {
+					background: darken($colorHeaderHover, 10%);
+				}
+			}
+		}
+  	 }
+  }
+}

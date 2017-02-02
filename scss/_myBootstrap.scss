@@ -1,0 +1,22 @@
+$colorLogo: #e7e7e7;
+
+.navbar-brand {
+	font-size: 2.4rem;
+	color: $colorLogo;
+	line-height: 80px;
+	padding: 0;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot');
+    src: url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+         url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2') format('woff2'),
+         url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+         url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+         url('../node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg') format('svg');
+  }
+
+.glyphicon {
+	line-height: none;
+}

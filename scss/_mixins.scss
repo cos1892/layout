@@ -1,0 +1,35 @@
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius; 
+	-moz-border-radius: $radius; 
+	-ms-border-radius: $radius; 
+	-o-border-radius: $radius; 
+	border-radius: $radius; 
+}
+
+@mixin transition($property, $duration:.4s) {
+	-webkit-transition: $property $duration;
+	-o-transition: $property $duration;
+	transition: $property $duration;
+}
+
+@mixin transform($deg) {
+	-webkit-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+@mixin ico ($color, $background) {
+	width: 70px;
+	height: 70px;
+	@include border-radius(50%);
+	float: left;
+	font-size: 3rem;
+	line-height: 70px;
+	text-align: center;
+	position: relative;
+	color: $color;
+	background: $background;
+	@include transition(background);
+	cursor: pointer;
+}
